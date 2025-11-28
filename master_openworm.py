@@ -237,6 +237,16 @@ for report in reports:
     print("Moving %s to %s" % (report, new_sim_out))
     shutil.move(report, new_sim_out)
 
+# Copy position files etc.
+txt_files = glob.glob("%s/*.txt" % latest_subdir)
+for txt_file in txt_files:
+    print("Moving %s to %s" % (txt_file, new_sim_out))
+    shutil.move(txt_file, new_sim_out)
+dat_files = glob.glob("%s/*.dat" % latest_subdir)
+for dat_file in dat_files:
+    print("Moving %s to %s" % (dat_file, new_sim_out))
+    shutil.move(dat_file, new_sim_out)
+
 # Copy WCON file(s)
 wcons = glob.glob("%s/*.wcon" % latest_subdir)
 for wcon in wcons:
