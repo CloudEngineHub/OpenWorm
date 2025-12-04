@@ -67,4 +67,18 @@ $C302_PART \
 openworm/openworm:$version \
 bash -c "DISPLAY=:44 python3 master_openworm.py"
 
+echo "Finished running docker deamon. Attaching to logs now:"
+
 docker logs -f openworm_$version
+
+echo "Finished running Docker container"
+
+last_dir=$(ls -td output/*/ | head -n 1)
+echo Last simulation directory: $last_dir
+
+if grep -q "ompleted successfully"  $last_dir/report.json; then
+    echo "Simulation has completed successfully."
+else
+    echo "Simulation has exited with an error."
+    exit -1
+fi

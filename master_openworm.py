@@ -54,7 +54,7 @@ def execute_with_realtime_output(command, directory, env=None):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n")
 
     if p.returncode != 0:
-        print("Exiting as the last command failed")
+        print("Exiting master Python script as the last command failed")
         exit(p.returncode)
 
 
