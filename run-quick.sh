@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 #from: https://unix.stackexchange.com/a/129401
 while getopts ":d:p:" opt; do
@@ -33,6 +34,6 @@ $DURATION_PART \
 --privileged \
 -v $HOST_OUT_DIR:$OW_OUT_DIR:rw \
 openworm/openworm:$version \
-bash -c "DISPLAY=:44 python master_openworm.py"
+bash -c "DISPLAY=:44 python3 master_openworm.py"
 
 docker logs -f openworm_$version
