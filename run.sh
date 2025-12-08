@@ -67,14 +67,14 @@ $C302_PART \
 openworm/openworm:$version \
 bash -c "DISPLAY=:44 python3 master_openworm.py"
 
-echo "Finished running docker deamon. Attaching to logs now:"
+echo "Set running running Docker container with Sibernetic in detached mode. Attaching to logs now..."
 
 docker logs -f openworm_$version
 
-echo "Finished running Docker container"
+echo "Finished running the Docker container"
 
 last_dir=$(ls -td output/*/ | head -n 1)
-echo Last simulation directory: $last_dir
+echo Last created simulation directory: $last_dir
 
 if grep -q "ompleted successfully"  $last_dir/report.json; then
     echo "Simulation has completed successfully."
