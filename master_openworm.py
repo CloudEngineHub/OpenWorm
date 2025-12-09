@@ -128,6 +128,7 @@ try:
         print("  %s: %s" % (p, PARAMETERS[p]))
 
     command = """python3 sibernetic_c302.py
+                -q
                 -duration %s
                 -dt %s
                 -dtNrn %s
