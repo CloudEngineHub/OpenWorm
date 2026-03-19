@@ -18,7 +18,7 @@ HOST_OUT_DIR=$PWD
 
 version=$(<VERSION) # Read version of Dockerfile from file VERSION
 
-xhost +
+# xhost + # remove for now...
 
 if [ -z "$duration" ]
 then #duration is not set, don't use it
