@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 #from: https://unix.stackexchange.com/a/129401
 while getopts ":d:p:" opt; do
