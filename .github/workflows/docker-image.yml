@@ -25,7 +25,7 @@ jobs:
         docker images
     - name: Run the Docker image
       run: |
-        ./run.sh
+        ./run.sh -d 150 # temp long test...
     - name: Info on generated files
       run: |
         ls -alth
