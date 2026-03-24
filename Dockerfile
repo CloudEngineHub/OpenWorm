@@ -71,7 +71,7 @@ RUN git clone https://github.com/openworm/c302.git && \
 
 RUN git clone https://github.com/openworm/sibernetic.git && \
   cd sibernetic && \
-  git checkout ow-0.9.8a  # fixed to a specific branch
+  git checkout ow-0.9.8b  # fixed to a specific branch
 
 
 ################################################################################
@@ -117,6 +117,12 @@ RUN cd sibernetic && \
 
 
 ################################################################################
+########     Set up JupyterLab
+
+#RUN sudo pip install notebook jupyterlab --break-system-packages
+
+
+################################################################################
 ########     Copy master python script
 
 # Not working with --chown=$USER:$USER
@@ -125,6 +131,9 @@ RUN sudo chown $USER:$USER $HOME/master_openworm.py
 
 RUN printf '\n\nalias cd..="cd .."\nalias h=history\nalias ll="ls -alth"\n' >> ~/.bashrc
 
+
+
 RUN pip list
 
 RUN echo "Built the OpenWorm Docker image!"
+

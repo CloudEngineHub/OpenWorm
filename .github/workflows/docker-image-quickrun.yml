@@ -2,9 +2,9 @@ name: Docker Image Quick Run
 
 on:
   push:
-    branches: [ master, dev*, test* ]
+    branches: [ master, dev*, test*, experimental ]
   pull_request:
-    branches: [ master, dev*, test* ]
+    branches: [ master, dev*, test*, experimental ]
 
 jobs:
 
@@ -25,6 +25,7 @@ jobs:
         docker images
     - name: Run the Docker image
       run: |
+        ### sudo apt-get update && sudo apt-get install -y x11-xserver-utils # for xhost
         ./run-quick.sh
     - name: Info on generated files
       run: |

@@ -1,5 +1,10 @@
 FROM ubuntu:24.04
 
+################################################################################
+########     Note: main Dockerfile using AMD libraries should be used unless
+########     there is a specific reason to use Intel OpenCL libraries
+################################################################################
+
 LABEL maintainer="David Lung (lungdm@gmail.com); Padraig Gleeson (p.gleeson@gmail.com)"
 
 ARG USR=ow
