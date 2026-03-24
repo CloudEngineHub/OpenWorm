@@ -17,7 +17,7 @@ OW_OUT_DIR=/home/ow/shared
 HOST_OUT_DIR=$PWD
 version=$(<VERSION) # Read version of Dockerfile from file VERSION
 
-# xhost + # remove for now...
+xhost + || true # allow connections to X server, don't throw an error if it fails
 
 
 NOC302_PART="-e NOC302=1"
